@@ -1,25 +1,99 @@
-<template>
-    <nav class="text-center py-4 border dark:border-gray-500 flex items-center justify-center">
-        The Navbar
-
-        <client-only>
-            <button class="flex px-2 py-1 rounded-md" @click="toggleDark()">
-                <svg v-if="isDark"  class="h-8 w-8 mr-2 p-1" :class="isDark == 'light' ? 'active':''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <svg v-else class="h-8 w-8 p-1" :class="isDark ? 'active':''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </client-only>
-    </nav>
-</template>
-
 <script setup>
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+import {useMagicKeys} from "@vueuse/core";
+
+import {ref, watch} from "vue";
+
+const color = useColorMode();
+
+function toggleDark() {
+  color.preference = color.value === "dark" ? "light" : "dark";
+}
+
+const isOpen = ref(false);
+const {Meta_K, Ctrl_K} = useMagicKeys({
+  passive: false,
+  onEventFired(e) {
+    if (e.key === "k" && (e.metaKey || e.ctrlKey)) e.preventDefault();
+  },
+});
+
+watch([Meta_K, Ctrl_K], (v) => {
+  if (v[0] || v[1]) isOpen.value = true;
+});
 </script>
 
-<style lang="postcss" scoped>
+<template>
+  <!-- <nav class="text-center py-4 flex items-center justify-center"></nav> -->
+  <header class="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-lg border dark:border-gray-500">
+    <div class="h-14 flex items-center container">
+      <div class="mr-4 hidden md:mr-1 md:flex">
+        <Logo />
 
-</style>
+        <nav class="flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
+          <nav class="flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
+            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/page">page</NuxtLink>
+          </nav>
+        </nav>
+      </div>
+
+      <div class="flex flex-1 items-center justify-between md:justify-end space-x-2">
+        <div class="w-full flex-1 md:w-auto md:flex-none">
+          <Button
+            variant="outline"
+            class="relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm text-muted-foreground font-normal shadow-none lg:w-64 md:w-40 sm:pr-12"
+            @click="isOpen = true">
+            <span class="hidden lg:inline-flex">Search documentation...</span>
+            <span class="inline-flex lg:hidden">Search...</span>
+            <Kbd
+              class="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 border rounded bg-muted px-1.5 text-[10px] font-medium font-mono opacity-100 sm:flex">
+              <span class="text-xs">⌘</span>
+              K
+            </Kbd>
+          </Button>
+        </div>
+
+        <nav class="flex items-end">
+          <client-only>
+            <DarkModeToggle />
+            <!-- <DarkMode /> -->
+          </client-only>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <Dialog v-model:open="isOpen">
+    <DialogContent class="p-0">
+      <Command>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandList @escape-key-down="isOpen = false">
+          <CommandGroup heading="Links">
+            <CommandItem v-for="item in mainNav" :key="item.title" :heading="item.title" :value="item.title" class="py-3" @select="handleSelectLink(item)">
+              <Icon name="radix-icons:file" class="mr-2 h-5 w-5" />
+              <span>{{ item.title }}</span>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <!-- <CommandGroup v-for="item in docsConfig.sidebarNav" :key="item.title" :heading="item.title">
+            <CommandItem
+              v-for="subItem in item.items"
+              :key="subItem.title"
+              :heading="subItem.title"
+              :value="subItem.title"
+              class="py-3"
+              @select="
+                handleSelectLink(subItem)"
+            >
+              <Icon name="radix-icons:circle" class="mr-2 h-4 w-4" />
+              <span>{{ subItem.title }}</span>
+            </CommandItem>
+          </CommandGroup> -->
+        </CommandList>
+      </Command>
+    </DialogContent>
+  </Dialog>
+</template>
+
+<style lang="postcss" scoped></style>

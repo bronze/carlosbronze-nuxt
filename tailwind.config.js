@@ -1,7 +1,10 @@
 import animate from "tailwindcss-animate"
 
 /** @type {import('tailwindcss').Config} */
-export const darkMode = ["class"]
+export const darkMode: ['class', '[data-theme="dark"]',  [
+    '@media (prefers-color-scheme: dark) { &:not(.light *) }',
+    '&:is(.dark *)',
+  ]]
 export const safelist = ["dark"]
 export const prefix = ""
 export const theme = {

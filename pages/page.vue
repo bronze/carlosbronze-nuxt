@@ -1,21 +1,6 @@
 <template>
   <div class="index h-[calc(100vh-8.3rem)] flex flex-col justify-center items-center border dark:border-gray-500">
     <h1 class="mt-2">Installed items:</h1>
-    <ColorScheme placeholder="..." tag="span">
-      Color mode:
-      <b>{{ $colorMode.preference }}</b>
-      <span v-if="$colorMode.preference === 'system'">
-        (
-        <i>{{ $colorMode.value }}</i>
-        mode detected)
-      </span>
-    </ColorScheme>
-    <br />
-    <a href="https://github.com/ydesign-labs/shadcn-nuxt-starter" class="href">https://github.com/ydesign-labs/shadcn-nuxt-starter</a>
-
-    <a href="https://github.com/BayBreezy/nuxt-ui-thing-starter" class="href">https://github.com/BayBreezy/nuxt-ui-thing-starter</a>
-
-    <a href="https://github.com/ZTL-UwU/shadcn-docs-nuxt" class="href">https://github.com/ZTL-UwU/shadcn-docs-nuxt</a>
     <p class="mt-2">
       <strong>Nuxt 3</strong>
       ,
@@ -54,25 +39,10 @@
 <script setup>
 import {InfoCircledIcon} from "@radix-icons/vue";
 import {HoverCard, HoverCardContent, HoverCardTrigger} from "@/components/ui/hover-card";
-const colorMode = useColorMode();
-
-console.log(colorMode.preference);
 </script>
 
 <style lang="postcss" scoped>
 .active {
   @apply bg-black text-white rounded-full dark:bg-white dark:text-black;
-}
-body {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
-}
-.dark-mode body {
-  background-color: #091a28;
-  color: #ebf4f1;
-}
-.sepia-mode body {
-  background-color: #f1e7d0;
-  color: #433422;
 }
 </style>
