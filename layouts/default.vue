@@ -4,9 +4,8 @@ import {SpeedInsights} from "@vercel/speed-insights/vue";
 
 <template>
   <SpeedInsights />
-
-  <the-navbar />
-  <div id="layout" class="default-layout min-h-screen container mx-auto flex flex-col">
+  <div class="default-layout min-h-screen container mx-auto flex flex-col">
+    <the-navbar />
     <div class="flex-auto">
       <slot />
     </div>

@@ -1,8 +1,8 @@
 <template>
   <!-- <footer class="border py-4 text-center dark:border-gray-500">The Footer</footer> -->
 
-  <footer class="py-6 text-muted-foreground md:px-8 md:py-0 border-t-[1px] border-gray-300 dark:border-gray-600">
-    <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
+  <footer class="py-6 text-muted-foreground md:py-0 border-t-[1px] border-gray-300 dark:border-gray-600">
+    <div class="flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
       <p class="flex items-center justify-center text-center">
         <Icon name="ph:code-bold" class="mr-2 inline-flex h-4 w-4" />
         Carlos Bronze &copy; {{ new Date().getFullYear() }}
@@ -39,18 +39,8 @@
 <style lang="postcss" scoped>
 .footerlinks {
   button {
-    &:hover,
-    &:focus,
-    &:active {
-      @apply bg-primary/20;
-    }
     span {
       @apply h-full w-8 cursor-pointer;
-      &:hover,
-      &:focus,
-      &:active {
-        @apply text-primary;
-      }
     }
   }
 }
