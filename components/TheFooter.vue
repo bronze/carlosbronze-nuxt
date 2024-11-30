@@ -1,15 +1,57 @@
 <template>
   <!-- <footer class="border py-4 text-center dark:border-gray-500">The Footer</footer> -->
 
-  <footer class="py-6 text-muted-foreground md:px-8 md:py-0 border dark:border-gray-500">
+  <footer class="py-6 text-muted-foreground md:px-8 md:py-0 border-t-[1px] border-gray-300 dark:border-gray-600">
     <div class="container flex flex-col items-center justify-between gap-2 md:h-24 md:flex-row">
-      <span class="text-sm">footer.credits12</span>
+      <p class="flex items-center justify-center text-center">
+        <Icon name="ph:code-bold" class="mr-2 inline-flex h-4 w-4" />
+        Carlos Bronze &copy; {{ new Date().getFullYear() }}
+      </p>
       <span class="flex-1" />
-      12
+      <div class="footerlinks mt-4 flex justify-center space-x-5 sm:mt-0">
+        <Button variant="ghost" size="icon" class="" href="https://linkedin.com/in/carlosbronze" rel="me" title="LinkedIn">
+          <Icon name="mdi:linkedin" title="LinkedIn" />
+        </Button>
+        <Button variant="ghost" size="icon" class="" href="https://github.com/bronze" rel="me" title="GitHub">
+          <Icon name="mdi:github" title="GitHub" />
+        </Button>
+        <Button variant="ghost" size="icon" class="" href="https://bsky.app/profile/carlosbronze.bsky.social" rel="me" title="BlueSky">
+          <Icon name="simple-icons:bluesky" title="BlueSky" />
+        </Button>
+        <Button variant="ghost" size="icon" class="" href="https://www.carlosbronze.com.br/onlyfans" rel="me" title="OnlyFans">
+          <Icon name="simple-icons:onlyfans" title="OnlyFans" />
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          href="https://docs.google.com/document/d/1QjJRMyWnHIhv6_bAtlz2mGRNnZZw81rjCOGd4ZlmZpY/edit?usp=sharing"
+          rel="me"
+          title="Resume">
+          <Icon name="mdi:document" title="Resume" />
+        </Button>
+      </div>
     </div>
   </footer>
 </template>
 
 <script setup></script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.footerlinks {
+  button {
+    &:hover,
+    &:focus,
+    &:active {
+      @apply bg-primary/20;
+    }
+    span {
+      @apply h-full w-8 cursor-pointer;
+      &:hover,
+      &:focus,
+      &:active {
+        @apply text-primary;
+      }
+    }
+  }
+}
+</style>
