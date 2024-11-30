@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "~/assets/css/fonts.css";
 import {ConfigProvider} from "radix-vue";
 import {Analytics} from "@vercel/analytics/nuxt";
 import Toaster from "@/components/ui/toast/Toaster.vue";
