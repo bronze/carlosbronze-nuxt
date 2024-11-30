@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/content",
     "nuxt-og-image",
-    "nuxt-vitalizer",
   ],
   colorMode: {
     preference: "system", // default value of $colorMode.preference
