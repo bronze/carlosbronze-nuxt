@@ -27,7 +27,7 @@ watch([Meta_K, Ctrl_K], (v) => {
   <header class="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-lg border dark:border-gray-500">
     <div class="h-14 flex items-center container">
       <div class="mr-4 hidden md:mr-1 md:flex">
-        <Logo />
+        <!-- <Logo /> -->
 
         <nav class="flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
           <nav class="flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
