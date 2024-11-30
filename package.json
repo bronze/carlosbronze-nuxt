@@ -21,7 +21,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "nuxt": "^3.14.1592",
-    "nuxt-og-image": "^4.0.0",
     "nuxt-posthog": "^1.5.4",
     "pinia": "^2.2.8",
     "radix-vue": "^1.9.10",

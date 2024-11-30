@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxt/content",
-    "nuxt-og-image",
   ],
   colorMode: {
     preference: "system", // default value of $colorMode.preference
