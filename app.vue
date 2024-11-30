@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ConfigProvider} from "radix-vue";
-
+import {Analytics} from "@vercel/analytics/nuxt";
 import Toaster from "@/components/ui/toast/Toaster.vue";
 </script>
 
@@ -10,6 +10,7 @@ import Toaster from "@/components/ui/toast/Toaster.vue";
     <Toaster />
     <NuxtLayout>
       <NuxtPage />
+      <Analytics />
     </NuxtLayout>
   </TooltipProvider>
 </template>
