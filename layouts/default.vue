@@ -1,4 +1,10 @@
+<script setup lang="ts">
+import {SpeedInsights} from "@vercel/speed-insights/vue";
+</script>
+
 <template>
+  <SpeedInsights />
+
   <the-navbar />
   <div id="layout" class="default-layout min-h-screen container mx-auto flex flex-col">
     <div class="flex-auto">
@@ -7,7 +13,5 @@
     <the-footer />
   </div>
 </template>
-
-<script setup></script>
 
 <style lang="postcss" scoped></style>
