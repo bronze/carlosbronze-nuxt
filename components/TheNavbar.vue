@@ -24,7 +24,7 @@ watch([Meta_K, Ctrl_K], (v) => {
 
 <template>
   <!-- <nav class="text-center py-4 flex items-center justify-center"></nav> -->
-  <header class="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-lg border">
+  <header class="sticky top-0 z-40 backdrop-blur-lg">
     <div class="h-14 flex items-center container">
       <div class="mr-4 hidden md:mr-1 md:flex">
         <!-- <Logo /> -->
