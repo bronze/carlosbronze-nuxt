@@ -1,5 +1,5 @@
 <template>
-  <div class="index min-h-[30vh] flex flex-col justify-center items-center border dark:border-gray-500">
+  <div class="index min-h-[50vh] flex flex-col justify-center items-center">
     <h1 class="mt-2">Installed items:</h1>
     <ColorScheme placeholder="..." tag="span">
       Color mode:

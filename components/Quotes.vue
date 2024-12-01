@@ -25,7 +25,7 @@
             );
           "></div>
       </div>
-      <p class="relative pb-4 ftext-4xl" id="quote-text">If you don’t know where you’re going, any road will take you there.</p>
+      <p class="relative pb-4 ftext-4xl text-balance" id="quote-text">If you don’t know where you’re going, any road will take you there.</p>
       <footer class="mt-4 block max-w-[70%] pb-12 not-italic">
         <span class="mb-1 block text-2xl" id="quote-author">— Lewis Carroll</span>
       </footer>
