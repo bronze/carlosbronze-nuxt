@@ -1,5 +1,5 @@
 <template>
-  <div class="index min-h-[calc(100vh-10rem)] flex flex-col justify-center items-center">
+  <div class="flex-auto content-center">
     <Quotes />
   </div>
 </template>

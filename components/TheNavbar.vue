@@ -26,13 +26,13 @@ watch([Meta_K, Ctrl_K], (v) => {
   <!-- <nav class="text-center py-4 flex items-center justify-center"></nav> -->
   <header class="sticky top-0 z-40 backdrop-blur-lg">
     <div class="h-14 flex items-center container">
-      <div class="mr-4 hidden md:mr-1 md:flex">
+      <div class="mr-4 md:mr-1 md:flex">
         <NuxtLink to="/" class="ftext-2xl lg:ftext-lg mr-12">
           <span class="text-text/60">Carlos</span>
           <span class="font-bold">Bronze</span>
         </NuxtLink>
         <!-- <Logo /> -->
-        <nav class="flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
+        <nav class="hidden md:flex items-center text-sm font-medium space-x-6 max-lg:space-x-4">
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/page">page</NuxtLink>
         </nav>
