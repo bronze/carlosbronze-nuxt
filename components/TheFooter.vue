@@ -9,26 +9,26 @@
       </p>
       <span class="flex-1" />
       <div class="footerlinks mt-4 flex justify-center space-x-5 sm:mt-0">
-        <Button variant="ghost" size="icon" class="" href="https://linkedin.com/in/carlosbronze" rel="me" title="LinkedIn">
+        <a variant="ghost" size="icon" class="" href="https://linkedin.com/in/carlosbronze" rel="me" title="LinkedIn">
           <Icon name="mdi:linkedin" title="LinkedIn" />
-        </Button>
-        <Button variant="ghost" size="icon" class="" href="https://github.com/bronze" rel="me" title="GitHub">
+        </a>
+        <a variant="ghost" size="icon" class="" href="https://github.com/bronze" rel="me" title="GitHub">
           <Icon name="mdi:github" title="GitHub" />
-        </Button>
-        <Button variant="ghost" size="icon" class="" href="https://bsky.app/profile/carlosbronze.bsky.social" rel="me" title="BlueSky">
+        </a>
+        <a variant="ghost" size="icon" class="" href="https://bsky.app/profile/carlosbronze.bsky.social" rel="me" title="BlueSky">
           <Icon name="simple-icons:bluesky" title="BlueSky" />
-        </Button>
-        <Button variant="ghost" size="icon" class="" href="https://www.carlosbronze.com.br/onlyfans" rel="me" title="OnlyFans">
+        </a>
+        <a variant="ghost" size="icon" class="" href="https://www.carlosbronze.com.br/onlyfans" rel="me" title="OnlyFans">
           <Icon name="simple-icons:onlyfans" title="OnlyFans" />
-        </Button>
-        <Button
+        </a>
+        <a
           variant="ghost"
           size="icon"
           href="https://docs.google.com/document/d/1QjJRMyWnHIhv6_bAtlz2mGRNnZZw81rjCOGd4ZlmZpY/edit?usp=sharing"
           rel="me"
           title="Resume">
           <Icon name="mdi:document" title="Resume" />
-        </Button>
+        </a>
       </div>
     </div>
   </footer>
